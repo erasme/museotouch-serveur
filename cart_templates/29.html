@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Foire de Saint-Étienne</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /> 
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" type="text/css" href="{{ site_http }}/content/css/cart.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{{ site_http }}/content/css/colorbox.css" media="screen" />
+	<script type="text/javascript" src="{{ site_http }}/content/js/jquery.js"></script> 
+	<script type="text/javascript" src="{{ site_http }}/content/js/jquery.colorbox.js"></script> 
+	<script type="text/javascript" src="{{ site_http }}/content/js/cufon.js"></script> 
+	<script type="text/javascript" src="{{ site_http }}/content/js/cufon.liberation.js"></script>
+	<script type="text/javascript">
+	Cufon.replace(".cufon");
+	$(document).ready(function(){
+		$(".modal").colorbox({transition:"elastic", maxWidth:"800px", maxHeight:"600px"});
+	});
+	</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="content">
+<!-- <img src="{{ site_http }}/imgs/logo.png" /> -->
+<h2>Foire Saint Etienne</h2>
+{% for item in items %}
+	<div>
+		{% if item._main_file != '' %}
+				<!-- <div class="avatar"><a href="{{ site_http }}/{{ item._main_file }}" class="modal" title="{{ item.nom }}"><img src="{{ site_http }}/{{ item._main_file }}" alt="Image de présentation" /></a></div> -->
+				<!-- <a href="{{ site_http }}/{{ item._main_file }}" class="modal" title="{{ item.nom }}"> -->
+					<div class="avatar" style="background-image: url({{ site_http }}/{{ item._main_file }});">
+						<a href="{{ site_http }}/{{ item._main_file }}" class="modal" title="{{ item.nom }}" class="more"></a>
+					</div>
+				<!-- </a> -->
+		{% endif %}
+		<div class="contentw">
+			<h3>{{ item.nom }}</h3>
+			<!-- <p><b>Exposition :</b> {{ item._expo_name }}</p> -->
+			<!-- <p><b>Soigne :</b> {{ item.orig_geo }}</p> -->
+			<p>{{ item.description }}</p>
+			<p>Faîtes profiter votre entourage : partager !
+				
+			</p>
+			<span>
+				<a href="https://twitter.com/share" target="_blank" class="share tw"></a>
+				<a href="#" class="share fb"></a>
+			</span>
+		</div>
+	</div>
+	{% if not loop.last %}
+		<br />
+	{% endif %}
+{% endfor %}
+
+	<div class="footer" id="footer">
+		<!-- <span>&copy; Tous droits réservés, <a href="http://wwww.erasme.org/" target="_blank">Erasme</a> 2011 – <a href="{{ site_http }}/legals.php">mentions légales</a></span> -->
+	<div>
+</div>
+
+
+
+</body>
+</html>

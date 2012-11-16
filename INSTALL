@@ -1,0 +1,35 @@
+L'insterface d'administration de Museotouch fonctionne en : php5 (5.3.4) / mysql5 (5.1.53)
+
+
+Plusieurs fichiers sont à configurer :
+1. Config
+	- Renommer ./incs/config.inc.php.default en ./incs/config.inc.php 
+	- Modifier les paramètres : bdd, mail, etc
+2. Htaccess
+	- Ouvrir ./.htaccess et modifiez les URLs de redirection des erreurs à votre guise
+
+
+Fichier de base de données (base en utf8_general_ci) :
+./museotouch.sql
+
+
+Mettez les droits corrects aux dossiers et sous-dossiers d'upload afin de pouvoir envoyer les fichiers depuis le backoffice :
+./uploads/
+
+
+Fichier "mentions légales" à modifier (uniquement le html) selon vos besoins (numéro de déclaration CNIL, etc.) :
+./legals.php
+
+
+Les fichiers suivants pourront être supprimés une fois l'installation effectuée :
+./INSTALL
+./museotouch.sql
+
+
+Compte par défaut de connexion :
+login : admin@example.com
+mdp : admin
+
+
+Utilisation de l'API, se reporter aux commentaires du fichier :
+./api/index.php

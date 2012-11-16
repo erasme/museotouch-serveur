@@ -1,0 +1,19 @@
+body { margin:0px; padding:0px; font:12px arial, sans-serif; }
+p { padding:0px; margin:15px 0px; }
+a { color:#1870B4; }
+img { border:0px; }
+div { margin:80px auto 0px; width:290px; }
+h1 { font-size:20px; }
+label { display: block; }
+input { -moz-border-radius:2px; -webkit-border-radius:2px; -moz-box-shadow: 0 0 3px #AAA; -webkit-box-shadow: 0 0 3px #AAA; border: 1px solid #AAA; padding:3px; }
+input[type=password], input[type=text] {  width:250px; }
+input[type=submit] { -moz-border-radius:2px; -webkit-border-radius:2px; background:#1870B4; background:-moz-linear-gradient(90deg, #1870B4, #2D87CC);  background:-webkit-gradient(linear, left top, left bottom, from(#2D87CC), to(#1870B4)); padding:5px 20px; font-weight:bold; color:#FFF; border:1px #1870B4 solid; }
+input[type=submit]:hover { background:#2D87CC; background:-moz-linear-gradient(90deg, #2D87CC, #3C97DD);  background:-webkit-gradient(linear, left top, left bottom, from(#3C97DD), to(#2D87CC)); }
+#login, #register, #forgotpass { -moz-border-radius:5px; -webkit-border-radius:5px; -moz-box-shadow:0 0 15px #aaa; -webkit-box-shadow:0 0 15px #aaa; padding:15px; display:block; }
+.login-submit { text-align:right; margin:0px; }
+.error { border-color:#E46C6D; background-color:#E46C6D; }
+.error_list { color:#E46C6D; }
+.valid_register { color:#060; text-align:center; }
+.mentions { width:800px; margin:20px auto 0px; text-align:justify; }
+.footer { position:relative; width:100%; text-align:right; height:20px; display:block; }
+#footer span { padding:6px 10px; vertical-align:middle; display:block; }
