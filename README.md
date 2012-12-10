@@ -1,5 +1,5 @@
 /***************************************************************************\
- *  Museotouch, Logiciel d'exploration de collections pour interface tactile utilisant Kivy (serveur)                        *
+ *  Museotouch, Logiciel d'exploration de collections pour interface tactile utilisant Kivy                        *
  *  Concept : Département du Rhône, Muchomedia, Trafik *  
  *  Développement : Département du Rhône, Muchomedia, Biin *  
  *  Produit par Erasme, centre d'innovation du Département du Rhône  *
