@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>{{ site_name }}</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /> 
+	<link rel="stylesheet" type="text/css" href="{{ site_http }}/content/css/cart.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{{ site_http }}/content/css/colorbox.css" media="screen" />
+	<script type="text/javascript" src="{{ site_http }}/content/js/jquery.js"></script> 
+	<script type="text/javascript" src="{{ site_http }}/content/js/jquery.colorbox.js"></script> 
+	<script type="text/javascript" src="{{ site_http }}/content/js/cufon.js"></script> 
+	<script type="text/javascript" src="{{ site_http }}/content/js/cufon.liberation.js"></script>
+	<script type="text/javascript">
+	Cufon.replace(".cufon");
+	$(document).ready(function(){
+		$(".modal").colorbox({transition:"elastic", maxWidth:"800px", maxHeight:"600px"});
+	});
+	</script>
+</head>
+<body>
+
+<div class="content">
+<img src="{{ site_http }}/imgs/logo.png" />
+<h2 class="cufon">Affichage du panier</h2>
+{% for item in items %}
+	<div>
+		{% if item._main_file != '' %}
+				<div class="avatar"><a href="{{ site_http }}/{{ item._main_file }}" class="modal" title="{{ item.nom }}"><img src="{{ site_http }}/{{ item._main_file }}" alt="Image de présentation" /></a></div>
+		{% endif %}
+		<div class="contentw">
+			<h3>{{ item.nom }}</h3>
+			<p><b>Exposition :</b> {{ item._expo_name }}</p>
+			<p><b>Soigne :</b> {{ item.orig_geo }}</p>
+			<p><i>{{ item.description }}</i></p>
+		</div>
+	</div>
+	{% if not loop.last %}
+		<br />
+	{% endif %}
+{% endfor %}
+</div>
+
+<div class="footer" id="footer">
+	<span>&copy; Tous droits réservés, <a href="http://wwww.erasme.org/" target="_blank">Erasme</a> 2011 – <a href="{{ site_http }}/legals.php">mentions légales</a></span>
+<div>
+
+</body>
+</html>

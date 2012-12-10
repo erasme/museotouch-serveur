@@ -1,0 +1,229 @@
+/*  
+Theme Name: Goonesis
+Version: 1.0
+Description: Créé par <a href="http://www.klick.fr">Klick</a>
+Author: Klick
+*/
+
+/* ##############################################################################################################
+
+INDEX :
+
+1. SETUP
+2. HEADER
+3. CONTENT
+4. SIDEBAR
+5. FOOTER
+
+
+############################################################################################################## */
+
+
+/* ##############################################################################################################
+	1. SETUP
+############################################################################################################## */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr { margin:0px; padding:0px; border:0px; vertical-align:baseline; background:transparent; }
+html, body { padding:0px; margin:auto; font-size:10pt; font:12px arial, sans-serif; }
+p { 
+	padding:0px; 
+	margin:15px 0px; 
+}
+a { color:#1870B4; }
+img { border:0px; }
+h1 { font-size:20px; display:block; }
+h2 { font-size:17px; display:block; }
+h3 { font-size:15px; display:block; }
+label { padding:0px 20px 0px 0px; }
+table { border-spacing:0px; }
+td, th { vertical-align:top; }
+input , select, textarea { -moz-border-radius:2px; -webkit-border-radius:2px; -moz-box-shadow: 0 0 3px #AAA; -webkit-box-shadow: 0 0 3px #AAA; border: 1px solid #AAA; padding:3px; }
+input[type=password], input[type=text], select, textarea {  width:250px; }
+input[type=submit] { -moz-border-radius:2px; -webkit-border-radius:2px; background:#1870B4; background:-moz-linear-gradient(90deg, #1870B4, #2D87CC);  background:-webkit-gradient(linear, left top, left bottom, from(#2D87CC), to(#1870B4)); padding:4px 20px; font-weight:bold; color:#FFF; border:1px #1870B4 solid; }
+input[type=submit]:hover { background:#2D87CC; background:-moz-linear-gradient(90deg, #2D87CC, #3C97DD);  background:-webkit-gradient(linear, left top, left bottom, from(#3C97DD), to(#2D87CC)); }
+.left { float:left; }
+.right { float:right; }
+.center { text-align:center; }
+.inline { display:inline; }
+.error { text-align:center; color:#F00; padding:20px; }
+.valid { text-align:center; color:#0F0; padding:20px; }
+.div_error { -moz-border-radius:2px; -webkit-border-radius:2px; background:#E55; text-align:center; color:#500; border:1px solid #600; font-weight:bold; padding:5px; margin:10px; }
+.div_valid { -moz-border-radius:2px; -webkit-border-radius:2px; background:#5E5; text-align:center; color:#050; border:1px solid #060; font-weight:bold; padding:5px; margin:10px; }
+.block { text-align:left; padding-left:20px; }
+.new_item { background-color:#B6E497; }
+
+nav {
+	width: 100%;
+	height: 50px;
+	background: #222;
+	position: fixed;
+	top: 0;
+	bottom: auto;
+	z-index: 5;
+	overflow: hidden;
+}
+
+nav ul {
+	width: 70%;
+	/* min-width: 1024px; */
+	position: relative;
+	margin-left: -35%;
+	left: 50%;
+}
+
+nav ul li {
+	list-style: none;
+	float: left;
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	width: 150px;
+	text-align: center;
+	color: rgba(255,255,255,0.8);
+	font-weight: bold;
+	border-left: 1px solid rgba(255,255,255,0.2);
+	overflow: hidden;
+	font-family: 'Futura W02 Heavy', helvetica, arial, sans-serif;
+}
+
+nav ul li:hover {
+	background-color: #333;
+}
+
+nav ul li.borderRight {
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+nav ul li img {
+	width: auto;
+	height: 30px;
+	margin-top: 10px;
+}
+
+nav ul li.right {
+	float: right;
+}
+
+nav ul li.logout {
+	width: 50px;
+	border-left: 1px solid rgba(255,255,255,0.4);
+	border-right: 1px solid rgba(255,255,255,0.4);
+	background: black url('close.png');
+	background-repeat: no-repeat;
+	background-size: 20px auto;
+	background-position: center center;
+}
+
+nav ul a {
+	text-decoration: none;
+}
+
+
+/* ##############################################################################################################
+	2. HEADER
+############################################################################################################## */
+
+#header { background-color:#F1F1F1; height:50px; margin:auto; padding:0px; display:block; width:100%; border-bottom:1px solid #D2D2D2; }
+#header ul li { display:inline; padding:20px 0px; }
+#header .connected { float:right; padding:10px; line-height:30px; vertical-align:middle; }
+#header .logo { float:left; vertical-align:middle; }
+#menu { float:left; padding:10px 50px; line-height:30px; vertical-align:middle; }
+
+
+
+
+/* ##############################################################################################################
+	3. CONTENT
+############################################################################################################## */
+
+#content { 
+	width: 70%;
+	/* min-width: 1024px; */
+	top: 60px;
+	position: relative;
+	margin-left: -35%;
+	left: 50%;
+	display:block; 
+	margin-right:10px;
+	z-index: 1;
+}
+#content table { 
+	width:100%; 
+}
+#main { 
+	border-left:1px solid #EBEBEB; 
+	padding:5px 0px 5px 5px; 
+	display: inline-block; 
+	height:100%; width:100%; 
+	vertical-align:top; 
+}
+.tableborder { 
+	border:1px solid #D2D2D2; 
+	border-bottom:0px; 
+	margin-right:5px; 
+}
+.tablefooter, .tablesubheader { 
+	background-color:#E9E9E9; 
+	font-size:12px; 
+	color:#3363A1; 
+	font-weight:bold; 
+	padding:5px; 
+	text-align:center; 
+	vertical-align:middle; 
+	border-bottom:1px solid #D2D2D2; 
+}
+.tablerow1 { 
+	background-color:#F0F0F0; 
+	padding:6px; 
+	border-bottom:1px solid #D2D2D2; 
+}
+.tablerow2 { 
+	background-color:#F8F8F8; 
+	padding:6px; 
+	border-bottom:1px solid #D2D2D2; 
+	border-left:1px solid #C1BEBE; 
+}
+
+img.mainPict {
+	width: 100px;
+	height: 100px;
+	border: 0;
+	border-radius: 2px;
+	margin-right: 6px;
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+
+span.addPict {
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	position: relative;
+	float: left;
+}
+
+textarea {
+	width: 320px;
+	height: 120px;
+}
+
+
+
+/* ##############################################################################################################
+	4. SIDEBAR
+############################################################################################################## */
+
+#sidebar { width:165px; vertical-align:top; }
+#sidebar div { display:block; height:auto; }
+#sidebar ul { list-style-type:none; }
+#sidebar ul li a:link, #sidebar ul li a:visited, #sidebar ul li a:hover, #sidebar ul li a:active { color:#DD4B39; font-weight:bold; display:block; padding:10px 0px 10px 5px; text-decoration:none; }
+#sidebar ul li ul li a:link, #sidebar ul li ul li a:visited, #sidebar ul li ul li a:active { width:150px; padding:5px 0px 5px 15px; color:#2D87CC; }
+#sidebar ul li ul li a:hover, #sidebar ul li ul li a.hover { background-color:#EFEFEF; color:#444; }
+
+
+/* ##############################################################################################################
+	5. FOOTER
+############################################################################################################## */
+
+#footer { text-align:center; border-top:1px solid #EBEBEB; padding-top:10px; }

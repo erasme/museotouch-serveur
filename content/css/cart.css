@@ -1,0 +1,150 @@
+body { 
+	background-color:#eee;
+	margin:auto; 
+	font-size:1em; 
+	line-height:21px; 
+	font-family:'Helvetica', 'Arial', sans-serif; 
+}
+
+h2 { 
+	font-size:1.2em;
+	padding: 15px;
+	color: black; 
+}
+
+h3 { 
+	font-size:1em; 
+}
+
+p { 
+	margin:0px; 
+	padding:0px; 
+}
+
+.footer {
+	width: 100%;
+	height: 150px;
+	background: #222;
+	display:block; 
+	text-align:center; 
+}
+
+div.content {
+	max-width: 900px; 
+	/* width:95%;  */
+	margin:0px auto; 
+	background-color:#FFF; 
+	border:1px solid #C2C2C2; 
+	/* padding:10px;  */
+	color:#333; 
+	/* text-align: center; */
+}
+
+/* .logo { 
+	display:block; 
+	margin:10px 0px 10px; 
+} */
+
+.error { 
+	color:#F00; 
+	text-align:center; 
+}
+
+div.avatar { 
+	width:100%; 
+	height: 150px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center center;
+	/* display:inline-block;  */
+}
+
+div.avatar a {
+	width:100px;
+	height: 150px;
+	display: block;
+	position: relative;
+	background: rgba(0,0,0,0.3) url(loupe.png);
+	background-repeat: no-repeat;
+	background-size: 30px auto;
+	background-position: center center;
+	float: right;
+}
+
+div.contentw { 
+	width:100%;
+	margin-top: 10px;
+	display:inline-block;
+}
+
+div.contentw span {
+	width: 100%;
+	height: 70px;
+	display: block;
+	margin-top: 10px;
+	font-size: 0.6em;
+	text-transform: uppercase;
+	line-height: 65px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	border-top: 1px solid #ccc;
+	background: #eee;
+}
+
+div.contentw span a.share {
+	width: 44px;
+	height: 44px;
+	display: block;
+	position: relative;
+	top: 13px; 
+	border-radius: 22px;
+}
+
+div.contentw span .tw {
+	float: left;
+	margin-left: 28%;
+	background: rgba(0,172,237,1) url(tw.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: 25px auto;
+}
+
+div.contentw span a.tw:active {
+	-webkit-box-shadow: 0px 0px 10px 5px rgba(0,172,237,0.5);
+	-moz-box-shadow: 0px 0px 10px 5px rgba(0,172,237,0.5);
+	-o-box-shadow: 0px 0px 10px 5px rgba(0,172,237,0.5);
+	box-shadow: 0px 0px 10px 5px rgba(0,172,237,0.5);
+}
+
+div.contentw span .fb {
+	float: right;
+	background-color: #eee;
+	margin-right: 28%;
+	background: rgba(58,89,162,1) url(f.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: 25px auto;
+}
+
+div.contentw span a.fb:active {
+	-webkit-box-shadow: 0px 0px 10px 5px rgba(58,89,162,0.5);
+	-moz-box-shadow: 0px 0px 10px 5px rgba(58,89,162,0.5);
+	-o-box-shadow: 0px 0px 10px 5px rgba(58,89,162,0.5);
+	box-shadow: 0px 0px 10px 5px rgba(58,89,162,0.5);
+}
+
+div.contentw h3 {
+	padding: 15px;
+}
+
+div.contentw p {
+	font-size: 0.8em;
+	padding: 15px;
+}
+
+div.blank { 
+	border-bottom:1px solid #C2C2C2; 
+	margin:15px; 
+	height:0px; 
+}
