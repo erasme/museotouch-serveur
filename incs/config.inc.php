@@ -5,13 +5,13 @@ if (!defined('INDEX_ADMIN')) { header("Location:../index.php"); }
 // NE PAS TOUCHER À CETTE LIGNE !!
 $config = array();
 
-$config['bdd_host'] = 'localhost';	// serveur
+$config['bdd_host'] = 'mysql:host=localhost';	// serveur
 $config['bdd_name'] = 'museotouch';		// base de données
-$config['bdd_user'] = 'root';		// utilisateur
-$config['bdd_pass'] = 'delorean1';		// mot de passe de l'utilisateur
+$config['bdd_user'] = 'museotouch';		// utilisateur
+$config['bdd_pass'] = 'museotouch';		// mot de passe de l'utilisateur
 
 $config['site_name'] = 'Erasme';	// nom du site
-$config['site_http'] = 'http://biinlab.com/museotouch';	// base URL du backoffice
+$config['site_http'] = 'http://localhost/museotouch-serveur';	// base URL du backoffice
 $config['site_mail'] = 'antoine@biin.fr';	// mail d'envoi des courriels de mot de passe perdus
 
 $config['cart_mail'] = 'antoine@biin.fr';	// mail d'envoi des courriels des url de paniers
@@ -30,7 +30,7 @@ $config['cart_body_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict
 	<style type="text/css">
 		body { background-color:#F0F0F0; margin:auto; font-size:13px; line-height:21px; font-family:\'Lucida Grande\', Arial, sans-serif; }
 		div.content { margin:10px auto; background-color:#FFF; border:1px solid #C2C2C2; width:600px; padding:10px; color:#333; }
-		div.logo { background:url(\''.$config['site_http'].'/imgs/logo.png\') no-repeat top left; height:50px; margin:10px 0px 10px; }
+		div.logo { background:url(' .$config['site_http'] . '\'/imgs/logo.png\') no-repeat top left; height:50px; margin:10px 0px 10px; }
 	</style>
 </head>
 <body>

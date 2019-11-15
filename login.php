@@ -2,6 +2,9 @@
 session_start();
 define('INDEX_ADMIN', true);
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // connexion à la BDD
 require_once(dirname(__FILE__).'/incs/config.inc.php');
@@ -18,13 +21,13 @@ $error_msg = 0;
 
 if (isset($_POST['courriel'])) {
 	
-	$sql = @mysql_query("SELECT `id`, `mailaddress` FROM `users` WHERE `mailaddress`='".mysql_real_escape_string(strtolower($_POST['courriel']))."' LIMIT 0,1");
-	if (@mysql_num_rows($sql) > 0) {
-		$result = @mysql_fetch_assoc($sql);
+	$sql = @mysqli_query("SELECT `id`, `mailaddress` FROM `users` WHERE `mailaddress`='".mysqli_real_escape_string(strtolower($_POST['courriel']))."' LIMIT 0,1");
+	if (@mysqli_num_rows($sql) > 0) {
+		$result = @mysqli_fetch_assoc($sql);
 		unset($_SESSION);
 		$newpass = newpasswd();
 		$headers = 'From: '.$config['site_mail']."\r\n".'Reply-To: '.$config['site_mail'];
-		if (@mysql_query("UPDATE `users` SET `password`='".(sha1($result['mailaddress'].md5($newpass)))."' WHERE `mailaddress`='".$result['mailaddress']."'")) {
+		if (@mysqli_query("UPDATE `users` SET `password`='".(sha1($result['mailaddress'].md5($newpass)))."' WHERE `mailaddress`='".$result['mailaddress']."'")) {
 			if (mail($result['mailaddress'], $config['site_name'].' : votre nouveau mot de passe.', "Bonjour.\r\n\r\nUne demande afin de réinitialiser votre mot de passe de connexion à votre compte ".$config['site_name']." a été effectuée.\r\nVoici votre nouveau mot de passe : ".$newpass."\r\n\r\nCordialement.", $headers)) {
 				$error_msg = 2;
 			} else {
@@ -85,7 +88,7 @@ if (isset($_POST['courriel'])) {
 </div>
 <div class="footer" id="footer">
 	<span>&copy; Tous droits réservés, <a href="http://wwww.erasme.org/" target="_blank">Erasme</a> 2011 – <a href="<?php echo $config['site_http']; ?>/legals.php">mentions légales</a></span>
-<div>
+</div>
 </body>
 </html>
 <?php
@@ -98,10 +101,27 @@ if (isset($_POST['courriel'])) {
 $error_msg = 0;
 
 if (isset($_POST['courriel'])) {
+    $result = array();
+    $req = $bdd->prepare('SELECT * FROM users WHERE mailaddress = ? AND password = ? LIMIT 0,1');
+    // sha1(strtolower($_POST['courriel']).md5($_POST['password']))
+    try
+    {
+        $bdd->beginTransaction();
+        $req->execute([
+            $_POST['courriel'],
+            sha1(strtolower($_POST['courriel']).md5($_POST['password']))
+        ]);
+        $bdd->commit();
+        $result = $req->fetch();
+    }
+    catch(PDOException $e)
+    {
+        $bdd->rollback();
+        print "Error!: " . $e->getMessage() . "</br>";
+    }
 	
-	$sql = @mysql_query("SELECT `id`, `lastname`, `firstname`, `is_admin`, `mailaddress`, `password` FROM `users` WHERE `mailaddress`='".mysql_real_escape_string(strtolower($_POST['courriel']))."' AND `password`='".mysql_real_escape_string(sha1(strtolower($_POST['courriel']).md5($_POST['password'])))."' LIMIT 0,1");
-	if (@mysql_num_rows($sql) > 0) {
-		$result = @mysql_fetch_assoc($sql);
+	//$sql = @mysqli_query("SELECT `id`, `lastname`, `firstname`, `is_admin`, `mailaddress`, `password` FROM `users` WHERE `mailaddress`='".mysqli_real_escape_string(strtolower($_POST['courriel']))."' AND `password`='".mysqli_real_escape_string(sha1(strtolower($_POST['courriel']).md5($_POST['password'])))."' LIMIT 0,1");
+	if ($result != array()) {
 		$_SESSION['id'] = $result['id'];
 		$_SESSION['user'] = $result['mailaddress'];
 		$_SESSION['pass'] = $result['password'];
@@ -158,7 +178,7 @@ if (isset($_POST['courriel'])) {
 </div>
 <div class="footer" id="footer">
 	<span>&copy; Tous droits réservés, <a href="http://wwww.erasme.org/" target="_blank">Erasme</a> 2011 – <a href="<?php echo $config['site_http']; ?>/legals.php">mentions légales</a></span>
-<div>
+</div>
 </body>
 </html>
 <?php

@@ -2,7 +2,7 @@
 
 if (!defined('INDEX_ADMIN')) { header("Location:../index.php"); }
 
-@mysql_close();
+@mysqli_close();
 
 ?>
 <!-- /content -->
